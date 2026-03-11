@@ -1,3 +1,11 @@
+// 3. נייבא את הנתונים הנדרשים
+//    named import - אפשר לייבא רק את מה שציבורי, חובה באותו שם
+//    תמיד נציין ניתוב יחסי וסיומת של קובץ
+// import { catalog } from "./db.js";
+
+// default import - באיזה שם שרוצים
+import myCatalog from "./db.js";
+
 const el = {
     catalog: document.querySelector('#catalog-container')
 };
@@ -32,6 +40,6 @@ const createCard = (disk) => {
     return card;
 };
 
-for (const cd of catalog) {
+for (const cd of myCatalog) {
     el.catalog.append(createCard(cd));
 }

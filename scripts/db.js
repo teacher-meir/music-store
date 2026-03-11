@@ -1,3 +1,7 @@
+// 2. נייצא את הנתונים הנדרשים מקובץ העזר
+// export - כך מייצאים נתונים מקובץ
+// public הופכים את כל מה שרוצים
+// export const catalog = [
 const catalog = [
     {
         title: "Empire Burlesque",
@@ -101,3 +105,11 @@ for (let i = 0; i < catalog.length; i++) {
     catalog[i].id = 1000 + i;
     catalog[i].amount = 100;
 }
+
+function printCatalogCount() {
+    console.log(catalog.length);    
+}
+
+printCatalogCount();
+
+export default catalog;
