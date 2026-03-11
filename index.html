@@ -1,12 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Store</title>
-    <script src="script.js" defer></script>
-</head>
-<body>
-    
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Music Store</title>
+		<link rel="stylesheet" href="style.css" />
+
+		<!-- ניתן לקשר את שני הסקריפטים בסדר זה -->
+		<!-- ולגשת לנתוני הקובץ הראשון מתוך הקובץ השני -->
+		<!-- אבל זה לא נח - כי צריך להקפיד על הסדר -->
+		<script src="scripts/db.js" defer></script>
+		<script src="scripts/main.js" defer></script>
+	</head>
+	<body>
+		<h1>My Catalog</h1>
+		<div id="catalog-container"></div>
+	</body>
 </html>
