@@ -3,6 +3,7 @@ const el = {
     header: document.querySelector('h1'),
     nameInput: document.querySelector('input[type=text]'),
     colorInput: document.querySelector('input[type=color]'),
+    btnClear: document.querySelector('button'),
 };
 
 
@@ -24,4 +25,16 @@ el.nameInput.onchange = () => {
 el.colorInput.oninput = (ev) => {
     const color = ev.target.value;
     document.body.style.background = color;
+
+    // שמירת הצבע בדפדפן
+    // 1.
+    localStorage.setItem('myColor', color);
+    // 2.
+    // localStorage.myColor = color;
+    // 3.
+    // localStorage['myColor'] = color;
+};
+
+el.btnClear.onclick = () => {
+    localStorage.removeItem('myColor');
 };
