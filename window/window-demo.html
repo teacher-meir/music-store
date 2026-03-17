@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+</head>
+<body>
+    <h1>BOM - Browser Object Model</h1>
+    <p>The Browser Object Model (BOM) provides an API for interacting with the browser window and its components.</p>
+    <h2>Window Object</h2>
+    <p>The <code>window</code> object represents the browser window and provides properties and methods for controlling the window's behavior and appearance.</p>
+    <h3>Properties</h3>
+    <ul>
+        <li><code>window.innerWidth</code>: Returns the width of the window's content area.</li>
+        <li><code>window.innerHeight</code>: Returns the height of the window's content area.</li>
+        <li><code>window.location</code>: Provides information about the current URL and allows you to navigate to different URLs.</li>
+        <li><code>window.navigator</code>: Provides information about the browser and its capabilities.</li>
+        <li><code>window.screen</code>: Provides information about the user's screen.</li>
+    </ul>
+    <h3>Methods</h3>
+    <ul>
+        <li><code>window.print()</code>: Opens the print dialog to print the current page.</li>
+        <li><code>window.open()</code>: Opens a new browser window or tab.</li>
+        <li><code>window.close()</code>: Closes the current browser window.</li>
+    </ul>
+    <div class="actions">
+        <button onclick="window.alert()">show message</button>
+        <button onclick="window.print()">print</button>
+        <button onclick="window.open('../save-data/other-page.html')">open other page</button>
+        <button onclick="window.close()">close window</button>
+    </div>
+</body>
+</html>
