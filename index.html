@@ -12,12 +12,15 @@
 		<!-- <script src="scripts/db.js" defer></script>
 		<script src="scripts/main.js" defer></script> -->
 
-        <!-- 1. נקשר את הסקריפט הראשי מסוג מודול -->
-        <script type="module" src="scripts/main.js"></script>
+		<!-- 1. נקשר את הסקריפט הראשי מסוג מודול -->
+		<script type="module" src="scripts/main.js"></script>
 	</head>
 	<body>
 		<h1>My Special Catalog</h1>
-        <a href="add-disk.html">Add Disk</a>
+		<div class="flex-container">
+			<button id="print-catalog">Print Catalog</button>
+			<a class="button" href="add-disk.html">Add Disk</a>
+		</div>
 		<div id="catalog-container"></div>
 	</body>
 </html>

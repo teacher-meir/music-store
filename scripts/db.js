@@ -1,6 +1,9 @@
 // 2. נייצא את הנתונים הנדרשים מקובץ העזר
 // export - כך מייצאים נתונים מקובץ
 // public הופכים את כל מה שרוצים
+
+import { loadFromStorage, saveToStorage } from "./storage-manager.js";
+
 // export const catalog = [
 const catalog = [
     {
@@ -112,4 +115,28 @@ function printCatalogCount() {
 
 printCatalogCount();
 
-export default catalog;
+// export default catalog;
+
+export const getCatalog = () => {
+    const ct = loadFromStorage('myCatalog');
+    if (ct) {
+        return ct;
+    } else {
+        return catalog;
+    }
+};
+
+export const addToCatalog = (cd) => {
+    const ct = getCatalog();
+    ct.push(cd);
+    saveToStorage('myCatalog', ct);
+};
+
+/**
+ * 
+ * @param {number} id 
+ */
+export const findDiskById = (id) => {
+    const ct = getCatalog();
+    return ct.find(d => d.id === id);
+};

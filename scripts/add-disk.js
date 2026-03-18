@@ -1,4 +1,6 @@
-import catalog from "./db.js";
+// import catalog from "./db.js";
+
+import { addToCatalog } from "./db.js";
 
 const el = {
     form: document.querySelector('form')
@@ -22,11 +24,13 @@ el.form.addEventListener('submit', (ev) => {
         // year: +year.value,
         year: year.valueAsNumber, // הערך באינפוט תמיד מחרוזת ולכן יש צורך בהמרה
         artist: artist.value,
-        country: country.value
+        country: country.value,
+        company: "",
+        price: 100,
+        amount: 0
     };
 
-    catalog.push(newDisk);
-    console.log(catalog);
+    addToCatalog(newDisk);
 
     title.value = '';
     artist.value = '';

@@ -4,12 +4,19 @@
 // import { catalog } from "./db.js";
 
 // default import - באיזה שם שרוצים
-import myCatalog from "./db.js";
+// import myCatalog from "./db.js";
+import { getCatalog } from "./db.js";
 
 const el = {
-    catalog: document.querySelector('#catalog-container')
+    catalog: document.querySelector('#catalog-container'),
+    printBtn: document.querySelector('#print-catalog'),
 };
 
+/**
+ * 
+ * @param {{ id: number, title: string, artist: string, country: string, company: string, price: number, year: number, amount: number }} disk 
+ * @returns 
+ */
 const createCard = (disk) => {
     const card = document.createElement('div');
     card.classList.add('card');
@@ -37,9 +44,19 @@ const createCard = (disk) => {
 
     container.append(head, author, price, amount);
 
+    const link = document.createElement('a');
+    link.classList.add('button');
+    link.href = `details.html?id=${disk.id}`;
+    link.textContent = `Show Details`;
+
+    card.append(link);
+
     return card;
 };
 
+const myCatalog = getCatalog();
 for (const cd of myCatalog) {
     el.catalog.append(createCard(cd));
 }
+
+el.printBtn.onclick = () => print();
